@@ -44,15 +44,15 @@ i {
 
 /* CHAT */
 
-#user-chat,
+
+/* #user-chat,
 #input-chat {
     height: 50px;
     border: 1px solid black;
-}
+} */
 
 #chat {
-    height: 400px;
-    border: 1px solid black;
+    min-height: 600px;
     background-image: url(/img/mine.jpg);
 }
 

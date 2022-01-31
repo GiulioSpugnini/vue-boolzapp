@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-12 position-relative gy-2" id="search-bar">
                             <i class="fas fa-search position-absolute fs-6 text-secondary"></i>
-                            <input class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                            <input class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="col-12 gy-3" id="contacts">
                             <ul class="list-group" id="contacts-list">
@@ -58,9 +58,21 @@
                 </section>
                 <!-- RIGHT SIDE WITH CHAT -->
                 <section class="col-8">
-                    <div id="user-chat">Nome Utente</div>
-                    <div id="chat">Chat</div>
-                    <div id="input-chat">Input testuale</div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="user-chat">Nome Utente</div>
+                        </div>
+                        <div class="col-12">
+                            <div id="chat">Chat</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row justify-content-between text-center" id="input-chat">
+                                <i class="col-1 gy-3 far fa-smile text-secondary"></i>
+                                <input type="text" class="col-10 gy-3" placeholder="Scrivi un messaggio">
+                                <i class="col-1 gy-3 fas fa-microphone text-secondary"></i>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>
