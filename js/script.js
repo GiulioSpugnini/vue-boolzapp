@@ -4,7 +4,7 @@ const app = new Vue({
     el: '#root',
     data: {
         inputText: '',
-        userMessages: ['Ciao domani vado in piscina, ok?'],
+        userMessages: 'Ciao domani vado in piscina, ok?',
         answer: 'OK',
         user: {
             name: 'Nome Utente',
@@ -31,6 +31,7 @@ const app = new Vue({
     methods: {
         addMessage() {
             this.userMessages.push(this.inputText);
+            this.inputText = '';
         },
     },
 })

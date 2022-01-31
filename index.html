@@ -79,11 +79,11 @@
                                 <div v-if='userMessages.length!=0' v-text='answer' id="answer" class="col-3"></div>
                             </div>
                         </div>
-                        <div class="col-12 gy-2">
-                            <div class="row justify-content-between text-center" id="input-chat">
-                                <i class="col-1 far fa-smile text-secondary"></i>
-                                <input @keyup.enter='addMessage' v-model='inputText' type="text" class="col-10" placeholder="Scrivi un messaggio">
-                                <i class="col-1 fas fa-microphone text-secondary"></i>
+                        <div class="col-12 bg-light-gray">
+                            <div class="row align-items-center text-center" id="input-chat">
+                                <i class="col-1 my-2 far fa-smile text-secondary"></i>
+                                <input @keyup.enter='addMessage' v-model='inputText' type="text" class="col-10 my-2" placeholder="Scrivi un messaggio">
+                                <i class="col-1 my-2 fas fa-microphone text-secondary"></i>
                             </div>
                         </div>
                     </div>

@@ -55,7 +55,7 @@ i {
 /* CHAT */
 
 #chat {
-    min-height: 600px;
+    min-height: 500px;
     background-image: url(/img/mine.jpg);
 }
 
@@ -64,6 +64,10 @@ i {
 
 .light-gray {
     color: #b1b1b1;
+}
+
+.bg-light-gray {
+    background-color: #eaeaea;
 }
 
 .bg-light-sky-blue {
