@@ -1,0 +1,21 @@
+body {
+    background-image: linear-gradient(#009688 20%, #dcdbd2 20%);
+    height: 100vh;
+}
+
+.container {
+    margin-top: 100px;
+    border: white 1px solid;
+    background-color: wheat;
+}
+
+
+/* Colors */
+
+.green {
+    background-color: greenyellow;
+}
+
+.purple {
+    background-color: slateblue;
+}
