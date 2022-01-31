@@ -5,7 +5,7 @@ const app = new Vue({
     data: {
         inputText: '',
         userMessages: 'Ciao domani vado in piscina, ok?',
-        answer: 'OK',
+        answer: 'NO',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -32,6 +32,20 @@ const app = new Vue({
         addMessage() {
             this.userMessages.push(this.inputText);
             this.inputText = '';
+        },
+        isActive(index) {
+            if (this.contact === index) return this.contact.name;
+        },
+        getDate() {
+            const currentDate = new Date().toLocaleDateString();
+            return currentDate;
+        },
+        getHour() {
+            const hours = new Date().getHours();
+            const minutes = new Date().getMinutes();
+            const seconds = new Date().getSeconds();
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+            return currentTime;
         },
     },
 })
