@@ -12,7 +12,22 @@ body {
     background-color: wheat;
 }
 
-#user-nav,
+img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+i {
+    font-size: 25px;
+    padding: 5px;
+}
+
+#user-nav {
+    background-color: #eaeaea;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #notify,
 #user,
 #search-bar,
@@ -30,6 +45,7 @@ body {
 #chat {
     height: 400px;
     border: 1px solid black;
+    background-image: url(/img/mine.jpg);
 }
 
 
@@ -41,4 +57,8 @@ body {
 
 .purple {
     background-color: slateblue;
+}
+
+.lightgray {
+    color: #b1b1b1;
 }
