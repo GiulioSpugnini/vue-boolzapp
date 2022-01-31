@@ -41,9 +41,14 @@ i {
     top: 6px;
 }
 
-#userMessage,
-#otherMessage {
-    background-color: green;
+#userMessage {
+    background-color: #d5f9ba;
+    border-radius: 10px;
+}
+
+#answer {
+    border-radius: 10px;
+    background-color: #fff;
 }
 
 

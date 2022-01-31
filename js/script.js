@@ -4,8 +4,8 @@ const app = new Vue({
     el: '#root',
     data: {
         inputText: '',
-        userMessages: [],
-        answer: 'ok',
+        userMessages: ['Ciao domani vado in piscina, ok?'],
+        answer: 'OK',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
