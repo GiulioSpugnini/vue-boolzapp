@@ -10,19 +10,19 @@ const app = new Vue({
         },
         contacts: [{
                 name: 'Michele',
-                avatar: '_1',
+                avatar: '_1.jpg',
             },
             {
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: '_2.jpg',
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: '_3.jpg',
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_4.jpg',
             },
         ]
     },
