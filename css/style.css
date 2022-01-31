@@ -51,6 +51,16 @@ i {
     background-color: #fff;
 }
 
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.list-group-item:hover {
+    background-color: lightgray;
+}
+
 
 /* CHAT */
 

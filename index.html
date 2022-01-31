@@ -46,9 +46,9 @@
                             <i class="fas fa-search position-absolute fs-6 text-secondary"></i>
                             <input class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
-                        <div class="col-12 gy-3" id="contacts">
+                        <div class="col-12 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
-                                <li class="list-group-item" v-for='(contact) in contacts'>
+                                <li role="button" class="list-group-item" v-for='(contact) in contacts'>
                                     <img :src="'img/avatar'+ contact.avatar" alt=""> {{contact.name}}
                                 </li>
                             </ul>
