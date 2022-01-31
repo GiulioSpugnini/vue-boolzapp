@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-12 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
-                                <li role="button" class="list-group-item" v-for='(contact) in contacts'>
+                                <li @click='selectedContact(index)' role="button" class="list-group-item" v-for='(contact, index) in contacts'>
                                     <img :src="'img/avatar'+ contact.avatar" alt=""> {{contact.name}}
                                 </li>
                             </ul>
@@ -61,8 +61,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="row" id="user-chat">
-                                <div v-bind='contacts' class="col-10 gy-2">
-                                    <img src="img/avatar_1.jpg" alt="Michele"> {{contacts.name}}
+                                <div v-bind='currentContact' class="col-10 gy-2">
+                                    <img :src="'img/avatar'+ currentContact.avatar" alt=""> {{currentContact.name}}
                                 </div>
                                 <div class="col-2 gy-3">
                                     <i class="fas fa-search text-secondary"></i>
@@ -77,12 +77,12 @@
                         <div class="col-12 gy-2" id="chat">
                             <div v-for='message in messages' class="row">
                                 <div id="userMessage" class="col-3 gy-3 offset-8">
-                                    {{message.userMessages}}
-                                    <p class="fs-6 light-gray">{{getDate()}} {{getHour()}}</p>
+                                    <div class="py-2">{{message.userMessages}}</div>
+                                    <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                 </div>
                                 <div id="answer" class="col-3 offset-1 gy-3">
-                                    {{message.answer}}
-                                    <p class="fs-6 light-gray">{{getDate()}} {{getHour()}}</p>
+                                    <div class="py-2">{{message.answer}}</div>
+                                    <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                 </div>
                             </div>
                         </div>
