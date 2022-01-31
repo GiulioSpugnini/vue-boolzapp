@@ -15,33 +15,35 @@
 
 <body>
     <div id="root">
-        <div class="container">
+        <main class="container">
             <div class="row">
-                <div class="col-3 green">
-                    <div class="row justify-content-between">
-                        <div class="col-12">
+                <section class="col-4 green">
+                    <nav class="row column justify-content-between">
+
+                        <div class="col-12" id="user-nav">
                             NOME UTENTE
                         </div>
-                        <div class="col-12">
+                        <div class="col-12" id="notify">
                             Notifiche
                         </div>
-                        <div class="col-12">
+                        <div class="col-12" id="search-bar">
                             Ricerca
                         </div>
-                        <div class="col-12">
-                            <ul>
+                        <div class="col-12" id="contacts">
+                            <ul id="contacts-list">
                                 <li>Utente</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="col-9 purple">
-                    <div>Chat</div>
-                    <div>Input testuale</div>
-                    <div>Nome Utente</div>
-                </div>
+                    </nav>
+
+                </section>
+                <section class="col-8 purple">
+                    <div id="user-chat">Nome Utente</div>
+                    <div id="chat">Chat</div>
+                    <div id="input-chat">Input testuale</div>
+                </section>
             </div>
-        </div>
+        </main>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
