@@ -13,7 +13,7 @@ body {
 }
 
 img {
-    width: 50px;
+    width: 54px;
     border-radius: 50%;
 }
 
@@ -33,8 +33,6 @@ i {
 
 #user-nav {
     background-color: #eaeaea;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .fa-search {

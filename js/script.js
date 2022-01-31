@@ -5,8 +5,9 @@ const app = new Vue({
     data: {
         inputText: '',
         currentContact: {
-            name: '',
-            avatar: '',
+            name: 'Michele',
+            avatar: '_1.jpg',
+            lastAccess: 'Ultimo accesso alle 20:00',
         },
         messages: [{
             userMessages: 'Voglio andare in piscina',
@@ -56,7 +57,8 @@ const app = new Vue({
             return currentTime;
         },
         selectedContact(index) {
-            return this.currentContact = { name: this.contacts[index].name, avatar: this.contacts[index].avatar };
+            const hour = this.getHour();
+            return this.currentContact = { name: this.contacts[index].name, avatar: this.contacts[index].avatar, lastAccess: 'Ultimo accesso alle ' + hour };
         },
     },
 })
