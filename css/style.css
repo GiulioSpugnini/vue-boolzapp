@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-    border: white 1px solid;
-    background-color: wheat;
+    box-shadow: 0px 0px 5px gray;
+    background-color: #fff;
 }
 
 img {
@@ -21,6 +21,9 @@ i {
     font-size: 25px;
     padding: 5px;
 }
+
+
+/* NAV */
 
 .fa-bell-slash {
     font-size: 30px;
@@ -34,12 +37,12 @@ i {
     padding-bottom: 10px;
 }
 
-#user,
-#search-bar,
-#contacts {
-    height: 100px;
-    border: 1px solid black;
+.fa-search {
+    top: 6px;
 }
+
+
+/* CHAT */
 
 #user-chat,
 #input-chat {
