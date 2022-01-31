@@ -19,11 +19,11 @@
             <div class="row">
                 <!-- LEFT SIDE WITH CONTACT AND SEARCHBAR -->
                 <section class="col-4">
-                    <nav class="row column">
+                    <nav class="row ">
 
                         <div class="col-12" id="user-nav">
                             <div class="row align-items-center">
-                                <div class="col-6"><img src="img/avatar_io.jpg" alt=""> Nome Utente</div>
+                                <div class="col-6"><img src="img/avatar_io.jpg" alt=""> {{user.name}}</div>
                                 <div class="col-6 text-end">
                                     <i class="fas fa-circle-notch light-gray"></i>
                                     <i class="fas fa-comment-alt light-gray"></i>
@@ -60,16 +60,30 @@
                 <section class="col-8">
                     <div class="row">
                         <div class="col-12">
-                            <div id="user-chat">Nome Utente</div>
+                            <div class="row" id="user-chat">
+                                <div v-bind='contacts' class="col-10 gy-2">
+                                    <img src="img/avatar_1.jpg" alt="Michele"> {{contacts.name}}
+                                </div>
+                                <div class="col-2 gy-3">
+                                    <i class="fas fa-search text-secondary"></i>
+                                    <i class="fas fa-paperclip text-secondary"></i>
+                                    <i class="fas fa-ellipsis-v text-secondary"></i>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div class="col-12">
-                            <div id="chat">Chat</div>
+                        <div class="col-12 gy-2" id="chat">
+                            <div class="row">
+                                <div v-if='userMessages.length!=0' v-text='userMessages' id="userMessage" class="col-3 offset-9"></div>
+                                <div v-if='userMessages.length!=0' v-text='answer' id="answer" class="col-3"></div>
+                            </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 gy-2">
                             <div class="row justify-content-between text-center" id="input-chat">
-                                <i class="col-1 gy-3 far fa-smile text-secondary"></i>
-                                <input type="text" class="col-10 gy-3" placeholder="Scrivi un messaggio">
-                                <i class="col-1 gy-3 fas fa-microphone text-secondary"></i>
+                                <i class="col-1 far fa-smile text-secondary"></i>
+                                <input @keyup.enter='addMessage' v-model='inputText' type="text" class="col-10" placeholder="Scrivi un messaggio">
+                                <i class="col-1 fas fa-microphone text-secondary"></i>
                             </div>
                         </div>
                     </div>

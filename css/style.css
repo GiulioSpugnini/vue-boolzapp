@@ -41,15 +41,13 @@ i {
     top: 6px;
 }
 
+#userMessage,
+#otherMessage {
+    background-color: green;
+}
+
 
 /* CHAT */
-
-
-/* #user-chat,
-#input-chat {
-    height: 50px;
-    border: 1px solid black;
-} */
 
 #chat {
     min-height: 600px;

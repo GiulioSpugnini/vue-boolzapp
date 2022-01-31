@@ -3,7 +3,9 @@ console.log('OK VUE', Vue);
 const app = new Vue({
     el: '#root',
     data: {
-        images: ['img/avatar_1', 'img/avatar_2', 'img/avatar_3', 'img/avatar_4', 'img/avatar_5', 'img/avatar_6', 'img/avatar_7', 'img/avatar_8'],
+        inputText: '',
+        userMessages: [],
+        answer: 'ok',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -26,5 +28,9 @@ const app = new Vue({
             },
         ]
     },
-    methods: {},
+    methods: {
+        addMessage() {
+            this.userMessages.push(this.inputText);
+        },
+    },
 })
