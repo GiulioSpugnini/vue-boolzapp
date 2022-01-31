@@ -4,8 +4,11 @@ const app = new Vue({
     el: '#root',
     data: {
         inputText: '',
-        userMessages: 'Ciao domani vado in piscina, ok?',
-        answer: 'NO',
+        messages: [{
+            userMessages: 'Voglio andare in piscina',
+            answer: 'Come vuoi',
+        }],
+
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -30,7 +33,7 @@ const app = new Vue({
     },
     methods: {
         addMessage() {
-            this.userMessages.push(this.inputText);
+            this.messages.push({ userMessages: this.inputText, answer: 'Come vuoi' });
             this.inputText = '';
         },
         isActive(index) {

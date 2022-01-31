@@ -75,13 +75,13 @@
                         </div>
                         <!-- CHAT -->
                         <div class="col-12 gy-2" id="chat">
-                            <div class="row">
-                                <div v-if='userMessages.length!=0' id="userMessage" class="col-3 gy-3 offset-8">
-                                    {{userMessages}}
+                            <div v-for='message in messages' class="row">
+                                <div id="userMessage" class="col-3 gy-3 offset-8">
+                                    {{message.userMessages}}
                                     <p class="fs-6 light-gray">{{getDate()}} {{getHour()}}</p>
                                 </div>
-                                <div v-if='userMessages.length!=0' id="answer" class="col-3 offset-1 gy-3">
-                                    {{answer}}
+                                <div id="answer" class="col-3 offset-1 gy-3">
+                                    {{message.answer}}
                                     <p class="fs-6 light-gray">{{getDate()}} {{getHour()}}</p>
                                 </div>
                             </div>
