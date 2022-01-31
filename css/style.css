@@ -22,13 +22,18 @@ i {
     padding: 5px;
 }
 
+.fa-bell-slash {
+    font-size: 30px;
+    color: #8edafc;
+    ;
+}
+
 #user-nav {
     background-color: #eaeaea;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#notify,
 #user,
 #search-bar,
 #contacts {
@@ -51,14 +56,10 @@ i {
 
 /* Colors */
 
-.green {
-    background-color: greenyellow;
-}
-
-.purple {
-    background-color: slateblue;
-}
-
-.lightgray {
+.light-gray {
     color: #b1b1b1;
+}
+
+.bg-light-sky-blue {
+    background-color: #8edafc;
 }
