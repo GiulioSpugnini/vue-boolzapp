@@ -14,14 +14,14 @@
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="h-100 d-flex align-items-center justify-content-center">
         <main class="container">
-            <div class="row">
+            <div class="row h-100">
                 <!-- LEFT SIDE WITH CONTACT AND SEARCHBAR -->
                 <section class="col-4">
-                    <nav class="row ">
+                    <nav class="row flex-column h-100">
 
-                        <div class="col-12" id="user-nav">
+                        <div class="col-12 flex-shrink-0" id="user-nav">
                             <div class="row align-items-center">
                                 <div class="col-6 py-2"><img src="img/avatar_io.jpg" alt=""> {{user.name}}</div>
                                 <div class="col-6 py-2 text-end">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <!-- NOTIFY -->
-                        <div class="col-12 bg-light-sky-blue" id="notify">
+                        <div class="col-12 flex-shrink-0 bg-light-sky-blue" id="notify">
                             <div class="row">
                                 <div class="col-2 gy-3"><i class="fas fa-bell-slash bg-white rounded-circle py-2 "></i></div>
                                 <div class="col-10 gy-3">
@@ -44,12 +44,12 @@
                             </div>
                         </div>
                         <!-- SEARCH -->
-                        <div class="col-12 position-relative gy-2" id="search-bar">
+                        <div class="col-12 flex-shrink-0 position-relative gy-2" id="search-bar">
                             <i class="fas fa-search position-absolute fs-6 text-secondary"></i>
                             <input class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!-- CONTACTS -->
-                        <div class="col-12 gy-3 px-0" id="contacts">
+                        <div class="col-12 flex-grow-1 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
                                 <li v-for='(contact, index) in contacts' @click='selectedContact(index)' role="button" class="list-group-item">
                                     <img :src='`img/avatar${contact.avatar}`' alt=""> {{contact.name}}
@@ -60,8 +60,8 @@
 
                 </section>
                 <!-- RIGHT SIDE WITH CHAT -->
-                <section class="col-8">
-                    <div class="row">
+                <section class="col-8 h-100">
+                    <div class="row flex-column h-100">
                         <div class="col-12">
                             <div class="row align-items-center" id="user-chat">
                                 <div v-bind='contacts' class="col-1 gy-2">
@@ -80,7 +80,7 @@
 
                         </div>
                         <!-- CHAT -->
-                        <div class="col-12 gy-2" id="chat">
+                        <div class="col gy-2" id="chat">
                             <div v-for='message in currentContact.messages' class="row">
                                 <div v-if="message.status=='sent'" id="userMessage" class="col-3 gy-3 offset-8">
                                     <div class="py-2">{{message.text}}</div>
@@ -92,6 +92,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Input -->
                         <div class="col-12 bg-light-gray">
                             <div class="row align-items-center text-center" id="input-chat">
                                 <i class="col-1 my-2 far fa-smile text-secondary"></i>

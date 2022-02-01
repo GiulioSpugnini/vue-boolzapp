@@ -3,13 +3,13 @@ body {
     height: 100vh;
 }
 
-#root {
-    padding-top: 100px;
-}
-
 .container {
     box-shadow: 0px 0px 5px gray;
     background-color: #fff;
+}
+
+main {
+    height: 90vh;
 }
 
 img {
@@ -68,7 +68,6 @@ i {
 
 #chat {
     overflow-y: scroll;
-    min-height: 500px;
     background-image: url(/img/mine.jpg);
 }
 
