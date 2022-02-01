@@ -122,13 +122,18 @@ const app = new Vue({
                 text: this.inputText,
                 status: 'sent'
             };
+
+            this.currentContact.messages.push({...newUserMessage });
+            const time = setInterval(this.addAnswer, 1000);
+            clearInterval(time, 1001);
+        },
+        addAnswer() {
             const newAnswerMessage = {
                 date: '10/01/2020 15:30:55',
                 text: 'ok',
                 status: 'received'
             };
-            this.currentContact.messages.push({...newUserMessage }, {...newAnswerMessage });
-            this.inputText = '';
+            this.currentContact.messages.push({...newAnswerMessage });
         },
         getDate() {
             const currentDate = new Date().toLocaleDateString();
@@ -150,8 +155,6 @@ const app = new Vue({
                 lastAccess: 'Ultimo accesso alle ' + hour
             };
         },
-        setTime() {
 
-        }
     },
 })
