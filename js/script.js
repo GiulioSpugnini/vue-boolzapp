@@ -124,8 +124,8 @@ const app = new Vue({
             };
 
             this.currentContact.messages.push({...newUserMessage });
-            const time = setInterval(this.addAnswer, 1000);
-            clearInterval(time, 1001);
+            setTimeout(this.addAnswer, 1000);
+            this.inputText = '';
         },
         addAnswer() {
             const newAnswerMessage = {
