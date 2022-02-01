@@ -39,14 +39,8 @@ i {
     top: 6px;
 }
 
-#userMessage {
-    background-color: #d5f9ba;
-    border-radius: 10px;
-}
-
-#answer {
-    border-radius: 10px;
-    background-color: #fff;
+#contacts {
+    overflow-y: scroll;
 }
 
 .list-group-item {
@@ -62,7 +56,18 @@ i {
 
 /* CHAT */
 
+#userMessage {
+    background-color: #d5f9ba;
+    border-radius: 10px;
+}
+
+#answer {
+    border-radius: 10px;
+    background-color: #fff;
+}
+
 #chat {
+    overflow-y: scroll;
     min-height: 500px;
     background-image: url(/img/mine.jpg);
 }

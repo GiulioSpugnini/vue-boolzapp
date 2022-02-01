@@ -49,7 +49,7 @@
                         <div class="col-12 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
                                 <li @click='selectedContact(index)' role="button" class="list-group-item" v-for='(contact, index) in contacts'>
-                                    <img :src="'img/avatar'+ contact.avatar" alt=""> {{contact.name}}
+                                    <img :src='`img/avatar${contact.avatar}`' alt=""> {{contact.name}}
                                 </li>
                             </ul>
                         </div>
@@ -61,8 +61,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="row align-items-center" id="user-chat">
-                                <div v-bind='currentContact' class="col-1 gy-2">
-                                    <img :src="'img/avatar'+ currentContact.avatar" alt="">
+                                <div v-bind=' currentContact ' class="col-1 gy-2">
+                                    <img :src="'img/avatar '+ currentContact.avatar" alt="">
                                 </div>
                                 <div class="col-9 gy-2 align-self-center fs-5">{{currentContact.name}}
                                     <p class="fs-6 text-secondary m-0">{{currentContact.lastAccess}}</p>
@@ -78,7 +78,7 @@
                         </div>
                         <!-- CHAT -->
                         <div class="col-12 gy-2" id="chat">
-                            <div v-for='message in messages' class="row">
+                            <div v-for='message in messages ' class="row">
                                 <div id="userMessage" class="col-3 gy-3 offset-8">
                                     <div class="py-2">{{message.userMessages}}</div>
                                     <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
@@ -92,7 +92,7 @@
                         <div class="col-12 bg-light-gray">
                             <div class="row align-items-center text-center" id="input-chat">
                                 <i class="col-1 my-2 far fa-smile text-secondary"></i>
-                                <input @keyup.enter='addMessage' v-model='inputText' type="text" class="col-10 my-2" placeholder="Scrivi un messaggio">
+                                <input @keyup.enter='addMessage ' v-model='inputText ' type="text" class="col-10 my-2" placeholder="Scrivi un messaggio">
                                 <i class="col-1 my-2 fas fa-microphone text-secondary"></i>
                             </div>
                         </div>
