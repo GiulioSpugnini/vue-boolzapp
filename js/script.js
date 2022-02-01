@@ -128,7 +128,12 @@ const app = new Vue({
         },
         selectedContact(index) {
             const hour = this.getHour();
-            return this.currentContact = { name: this.contacts[index].name, avatar: this.contacts[index].avatar, lastAccess: 'Ultimo accesso alle ' + hour };
+            return this.currentContact = {
+                name: this.contacts[index].name,
+                avatar: this.contacts[index].avatar,
+                messages: this.contacts[index].messages,
+                lastAccess: 'Ultimo accesso alle ' + hour
+            };
         },
     },
 })
