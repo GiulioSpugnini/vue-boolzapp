@@ -4,6 +4,7 @@ const app = new Vue({
     el: '#root',
     data: {
         inputText: '',
+        searchText: '',
         currentContact: {
             name: 'Michele',
             avatar: '_1',
@@ -55,7 +56,7 @@ const app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: false,
+                visible: true,
                 messages: [{
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
@@ -76,7 +77,7 @@ const app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: false,
+                visible: true,
                 messages: [{
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
@@ -95,9 +96,9 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Carlo',
                 avatar: '_4',
-                visible: false,
+                visible: true,
                 messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -148,7 +149,7 @@ const app = new Vue({
         },
         selectedContact(index) {
             const hour = this.getHour();
-            return this.currentContact = {
+            this.currentContact = {
                 name: this.contacts[index].name,
                 avatar: this.contacts[index].avatar,
                 messages: this.contacts[index].messages,
@@ -156,7 +157,15 @@ const app = new Vue({
             };
         },
         isVisible() {
-            this.contacts.visible;
+            return this.contact.visible;
+        },
+
+        searchContact() {
+            const word = this.searchText;
+            this.contacts.forEach(contact => {
+                if (!contact.name.toLowerCase().includes(word.toLowerCase())) contact.visible = false;
+            });
+            return contacts;
         }
 
     },

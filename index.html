@@ -44,14 +44,14 @@
                             </div>
                         </div>
                         <!-- SEARCH -->
-                        <div class="col-12 flex-shrink-0 position-relative gy-2" id="search-bar">
+                        <div v-for='(contact, index) in contacts' v-if='index==0' class="col-12 flex-shrink-0 position-relative gy-2" id="search-bar">
                             <i class="fas fa-search position-absolute fs-6 text-secondary"></i>
-                            <input :class="{'d-none': isVisible()===false}" class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
+                            <input @keyup='searchContact' v-model='searchText' class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!-- CONTACTS -->
                         <div class="col-12 flex-grow-1 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
-                                <li v-for='(contact, index) in contacts' @click='selectedContact(index)' role="button" class="list-group-item">
+                                <li v-for='(contact, index) in contacts' v-if='contact.visible===true' @click='selectedContact(index)' role="button" class="list-group-item">
                                     <img :src='`img/avatar${contact.avatar}.jpg`' alt=""> {{contact.name}}
                                 </li>
                             </ul>
