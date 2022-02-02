@@ -6,7 +6,7 @@ const app = new Vue({
         inputText: '',
         currentContact: {
             name: 'Michele',
-            avatar: '_1.jpg',
+            avatar: '_1',
             messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Hai portato a spasso il cane?',
@@ -28,12 +28,12 @@ const app = new Vue({
 
 
         user: {
-            name: 'Nome Utente',
+            name: 'Elisa',
             avatar: '_io'
         },
         contacts: [{
                 name: 'Michele',
-                avatar: '_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [{
                         date: '10/01/2020 15:30:55',
@@ -54,8 +54,8 @@ const app = new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: '_2.jpg',
-                visible: true,
+                avatar: '_2',
+                visible: false,
                 messages: [{
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
@@ -75,8 +75,8 @@ const app = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: '_3.jpg',
-                visible: true,
+                avatar: '_3',
+                visible: false,
                 messages: [{
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
@@ -96,8 +96,8 @@ const app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4.jpg',
-                visible: true,
+                avatar: '_4',
+                visible: false,
                 messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -155,6 +155,9 @@ const app = new Vue({
                 lastAccess: 'Ultimo accesso alle ' + hour
             };
         },
+        isVisible() {
+            this.contacts.visible;
+        }
 
     },
 })

@@ -23,7 +23,7 @@
 
                         <div class="col-12 flex-shrink-0" id="user-nav">
                             <div class="row align-items-center">
-                                <div class="col-6 py-2"><img src="img/avatar_io.jpg" alt=""> {{user.name}}</div>
+                                <div class="col-6 py-2"><img :src="'img/avatar'+ user.avatar+'.jpg'" alt=""> {{user.name}}</div>
                                 <div class="col-6 py-2 text-end">
                                     <i class="fas fa-circle-notch light-gray"></i>
                                     <i class="fas fa-comment-alt light-gray"></i>
@@ -46,13 +46,13 @@
                         <!-- SEARCH -->
                         <div class="col-12 flex-shrink-0 position-relative gy-2" id="search-bar">
                             <i class="fas fa-search position-absolute fs-6 text-secondary"></i>
-                            <input class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
+                            <input :class="{'d-none': isVisible()===false}" class="form-control me-2 px-4" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!-- CONTACTS -->
                         <div class="col-12 flex-grow-1 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
                                 <li v-for='(contact, index) in contacts' @click='selectedContact(index)' role="button" class="list-group-item">
-                                    <img :src='`img/avatar${contact.avatar}`' alt=""> {{contact.name}}
+                                    <img :src='`img/avatar${contact.avatar}.jpg`' alt=""> {{contact.name}}
                                 </li>
                             </ul>
                         </div>
@@ -65,7 +65,7 @@
                         <div class="col-12">
                             <div class="row align-items-center" id="user-chat">
                                 <div v-bind='contacts' class="col-1 gy-2">
-                                    <img :src="'img/avatar'+ currentContact.avatar" alt="">
+                                    <img :src="'img/avatar'+ currentContact.avatar+'.jpg'" alt="">
                                 </div>
                                 <div class="col-9 gy-2 align-self-center fs-5">{{currentContact.name}}
                                     <p class="fs-6 text-secondary m-0">{{currentContact.lastAccess}}</p>
