@@ -164,8 +164,9 @@ const app = new Vue({
             const word = this.searchText;
             this.contacts.forEach(contact => {
                 if (!contact.name.toLowerCase().includes(word.toLowerCase())) contact.visible = false;
+                if (this.searchText == '') contact.visible = true;
             });
-            return contacts;
+
         }
 
     },
