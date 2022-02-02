@@ -3,6 +3,7 @@ console.log('OK VUE', Vue);
 const app = new Vue({
     el: '#root',
     data: {
+        isClicked: false,
         inputText: '',
         searchText: '',
         currentContact: {
@@ -167,7 +168,10 @@ const app = new Vue({
                 if (this.searchText == '') contact.visible = true;
             });
 
+        },
+        clicked() {
+            if (this.isClicked) this.isClicked = false;
+            else this.isClicked = true;
         }
-
     },
 })

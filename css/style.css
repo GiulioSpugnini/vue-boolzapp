@@ -88,6 +88,18 @@ i {
     background-image: url(/img/mine.jpg);
 }
 
+.fa-chevron-down {
+    top: 0;
+    left: 82%;
+    font-size: 15px;
+    color: gray;
+}
+
+.info-message {
+    top: 90%;
+    left: 28%;
+}
+
 
 /* Colors */
 
