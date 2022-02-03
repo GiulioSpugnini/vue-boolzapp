@@ -137,7 +137,7 @@ const app = new Vue({
                 status: 'sent'
             };
 
-            this.currentContact.messages.push({...newUserMessage });
+            this.currentContact.messages.push(newUserMessage);
             setTimeout(this.addAnswer, 1000);
             this.inputText = '';
         },
@@ -147,7 +147,7 @@ const app = new Vue({
                 text: 'ok',
                 status: 'received'
             };
-            this.currentContact.messages.push({...newAnswerMessage });
+            this.currentContact.messages.push(newAnswerMessage);
         },
         getDate() {
             const currentDate = new Date().toLocaleDateString();

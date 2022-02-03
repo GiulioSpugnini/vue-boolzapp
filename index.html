@@ -82,9 +82,9 @@
                                 <div v-if="message.status=='sent'" class="col-3 gy-3 offset-8 position-relative">
                                     <div id="userMessage" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
-                                        <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
-                                            <div>Info messaggio</div>
-                                            <div role="button" @click='deleteMessage'>Cacella messaggio</div>
+                                        <div v-if='message.isClicked===true' class="bg-light rounded position-absolute info-message">
+                                            <div class="p-2">Info messaggio</div>
+                                            <div class="p-2" role="button" @click='deleteMessage'>Cancella messaggio</div>
                                         </div>
                                     </div>
                                 </div>
@@ -92,9 +92,9 @@
                                 <div v-if="message.status=='received'" class="col-3 gy-3 offset-1 position-relative">
                                     <div id="answer" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
-                                        <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
-                                            <div>Info messaggio</div>
-                                            <div role="button" @click='deleteMessage'>Cacella messaggio</div>
+                                        <div v-if='message.isClicked===true' class="bg-light rounded position-absolute info-message">
+                                            <div class="p-2">Info messaggio</div>
+                                            <div class="p-2" role="button" @click='deleteMessage'>Cancella messaggio</div>
                                         </div>
                                     </div>
                                 </div>
