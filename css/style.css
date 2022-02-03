@@ -98,6 +98,7 @@ i {
 .info-message {
     top: 90%;
     left: 28%;
+    z-index: 1;
 }
 
 

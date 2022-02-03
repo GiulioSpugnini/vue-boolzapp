@@ -3,7 +3,7 @@ console.log('OK VUE', Vue);
 const app = new Vue({
     el: '#root',
     data: {
-        isClicked: false,
+        isActive: false,
         inputText: '',
         searchText: '',
         currentContact: {
@@ -12,17 +12,20 @@ const app = new Vue({
             messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Hai portato a spasso il cane?',
-                    status: 'sent'
+                    status: 'sent',
+                    isClicked: false,
                 },
                 {
                     date: '10/01/2020 15:50:00',
                     text: 'Ricordati di dargli da mangiare',
-                    status: 'sent'
+                    status: 'sent',
+                    isClicked: false,
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     text: 'Tutto fatto!',
-                    status: 'received'
+                    status: 'received',
+                    isClicked: false,
                 },
             ],
             lastAccess: 'Ultimo accesso alle 20:00',
@@ -40,17 +43,20 @@ const app = new Vue({
                 messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        isClicked: false,
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        isClicked: false,
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     }
                 ],
             },
@@ -61,17 +67,20 @@ const app = new Vue({
                 messages: [{
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        isClicked: false,
                     },
                     {
                         date: '20/03/2020 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     },
                     {
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     }
                 ],
             },
@@ -82,17 +91,20 @@ const app = new Vue({
                 messages: [{
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     },
                     {
                         date: '28/03/2020 10:20:10',
                         text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        isClicked: false,
                     },
                     {
                         date: '28/03/2020 16:15:22',
                         text: 'Ah scusa!',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     }
                 ],
             },
@@ -103,21 +115,21 @@ const app = new Vue({
                 messages: [{
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
+                        isClicked: false,
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
+                        status: 'received',
+                        isClicked: false,
                     }
                 ],
             },
         ],
     },
     methods: {
-        isActive(index) {
-            return index == this.currentIndex;
-        },
+
         addMessage() {
             const newUserMessage = {
                 date: '10/01/2020 15:30:55',
@@ -169,9 +181,5 @@ const app = new Vue({
             });
 
         },
-        clicked() {
-            if (this.isClicked) this.isClicked = false;
-            else this.isClicked = true;
-        }
     },
 })

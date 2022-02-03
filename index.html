@@ -20,7 +20,6 @@
                 <!-- LEFT SIDE WITH CONTACT AND SEARCHBAR -->
                 <section class="col-4">
                     <nav class="row flex-column h-100">
-
                         <div class="col-12 flex-shrink-0" id="user-nav">
                             <div class="row align-items-center">
                                 <div class="col-6 py-2"><img :src="'img/avatar'+ user.avatar+'.jpg'" alt=""> {{user.name}}</div>
@@ -57,7 +56,6 @@
                             </ul>
                         </div>
                     </nav>
-
                 </section>
                 <!-- RIGHT SIDE WITH CHAT -->
                 <section class="col-8 h-100">
@@ -76,28 +74,29 @@
                                     <i class="fas fa-ellipsis-v text-secondary"></i>
                                 </div>
                             </div>
-
-
                         </div>
                         <!-- CHAT -->
                         <div class="col gy-2" id="chat">
-                            <div v-for='message in currentContact.messages' class="row">
+                            <div v-for='(message,index) in currentContact.messages' class="row">
+                                <!-- SENT MESSAGE -->
                                 <div v-if="message.status=='sent'" class="col-3 gy-3 offset-8 position-relative">
-                                    <div id="userMessage" class="p-2"><i role="button" @click='clicked' class="fas fa-chevron-down position-absolute"></i>{{message.text}}
+                                    <div id="userMessage" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
-                                        <div v-if='isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
+                                        <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
                                             <div>Info messaggio</div>
                                             <div>Cacella messaggio</div>
                                         </div>
                                     </div>
-
-
                                 </div>
-                                <div v-if="message.status=='received'" class="col-3 offset-1 gy-3">
-                                    <div id="answer" class="p-2">{{message.text}}
+                                <!-- RECEIVED MESSAGE -->
+                                <div v-if="message.status=='received'" class="col-3 gy-3 offset-1 position-relative">
+                                    <div id="answer" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
+                                        <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
+                                            <div>Info messaggio</div>
+                                            <div>Cacella messaggio</div>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -113,7 +112,6 @@
                 </section>
             </div>
         </main>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
