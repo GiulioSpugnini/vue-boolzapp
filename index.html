@@ -84,7 +84,7 @@
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                         <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
                                             <div>Info messaggio</div>
-                                            <div>Cacella messaggio</div>
+                                            <div role="button" @click='deleteMessage'>Cacella messaggio</div>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                         <div v-if='message.isClicked===true' class="bg-light rounded p-2 position-absolute info-message">
                                             <div>Info messaggio</div>
-                                            <div>Cacella messaggio</div>
+                                            <div role="button" @click='deleteMessage'>Cacella messaggio</div>
                                         </div>
                                     </div>
                                 </div>

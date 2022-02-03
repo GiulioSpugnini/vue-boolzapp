@@ -181,5 +181,13 @@ const app = new Vue({
             });
 
         },
+        deleteMessage() {
+            const newUserMessage = {
+                date: '10/01/2020 15:30:55',
+                text: this.inputText,
+                status: 'sent'
+            };
+            this.currentContact.messages.splice(newUserMessage, 1);
+        },
     },
 })
