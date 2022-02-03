@@ -189,5 +189,10 @@ const app = new Vue({
             };
             this.currentContact.messages.splice(newUserMessage, 1);
         },
+        lastMessage(contact) {
+            // return contact.messages[length - 1].text;
+            // console.log(contact.messages.length);
+
+        }
     },
 })

@@ -40,6 +40,12 @@ i {
     cursor: pointer;
 }
 
+.contact-date {
+    font-size: 12px;
+    top: 0;
+    left: 80%;
+}
+
 
 /* NAV */
 

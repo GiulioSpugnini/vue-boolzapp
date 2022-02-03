@@ -52,6 +52,7 @@
                             <ul class="list-group" id="contacts-list">
                                 <li v-for='(contact, index) in contacts' v-if='contact.visible===true' @click='selectedContact(index)' role="button" class="list-group-item">
                                     <img :src='`img/avatar${contact.avatar}.jpg`' alt=""> {{contact.name}}
+                                    <p v-for='(message,index) in contact.messages' v-if='contact.messages.length-1===index' class="contact-date position-absolute">{{message.date}}</p>
                                 </li>
                             </ul>
                         </div>
