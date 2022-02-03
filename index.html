@@ -22,7 +22,7 @@
                     <nav class="row flex-column h-100">
                         <div class="col-12 flex-shrink-0" id="user-nav">
                             <div class="row align-items-center">
-                                <div class="col-6 py-2"><img :src="'img/avatar'+ user.avatar+'.jpg'" alt=""> {{user.name}}</div>
+                                <div class="col-6 py-2 h5"><img :src="'img/avatar'+ user.avatar+'.jpg'" alt=""> {{user.name}}</div>
                                 <div class="col-6 py-2 text-end">
                                     <i class="fas fa-circle-notch light-gray"></i>
                                     <i class="fas fa-comment-alt light-gray"></i>
@@ -50,7 +50,7 @@
                         <!-- CONTACTS -->
                         <div class="col-12 flex-grow-1 gy-3 px-0" id="contacts">
                             <ul class="list-group" id="contacts-list">
-                                <li v-for='(contact, index) in contacts' v-if='contact.visible===true' @click='selectedContact(index)' role="button" class="list-group-item">
+                                <li v-for='(contact, index) in contacts' v-if='contact.visible===true' @click='selectedContact(index)' role="button" class="list-group-item h6">
                                     <img :src='`img/avatar${contact.avatar}.jpg`' alt=""> {{contact.name}}
                                     <p v-for='(message,index) in contact.messages' v-if='contact.messages.length-1===index' class="contact-date position-absolute">{{message.date}}</p>
                                 </li>
@@ -63,10 +63,10 @@
                     <div class="row flex-column h-100">
                         <div class="col-12">
                             <div class="row align-items-center" id="user-chat">
-                                <div v-bind='contacts' class="col-1 gy-2">
+                                <div v-bind='contacts' class="col-1 gy-2 h6">
                                     <img :src="'img/avatar'+ currentContact.avatar+'.jpg'" alt="">
                                 </div>
-                                <div class="col-9 gy-2 align-self-center fs-5">{{currentContact.name}}
+                                <div class="col-9 gy-2 align-self-center fs-5 h6">{{currentContact.name}}
                                     <p class="fs-6 text-secondary m-0">{{currentContact.lastAccess}}</p>
                                 </div>
                                 <div class="col-2  gy-2">
@@ -81,7 +81,7 @@
                             <div v-for='(message,index) in currentContact.messages' class="row">
                                 <!-- SENT MESSAGE -->
                                 <div v-if="message.status=='sent'" class="col-3 gy-3 offset-8 position-relative">
-                                    <div id="userMessage" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
+                                    <div id="userMessage" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                         <div v-if='message.isClicked===true' class="bg-light rounded position-absolute info-message">
                                             <div class="p-2">Info messaggio</div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <!-- RECEIVED MESSAGE -->
                                 <div v-if="message.status=='received'" class="col-3 gy-3 offset-1 position-relative">
-                                    <div id="answer" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" :class="{active:isActive}" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
+                                    <div id="answer" class="p-2"><i role="button" @click="message.isClicked = !message.isClicked" @click="toggle" class="fas fa-chevron-down position-absolute"></i>{{message.text}}
                                         <p class="fs-6 light-gray my-0 text-end">{{getDate()}} {{getHour()}}</p>
                                         <div v-if='message.isClicked===true' class="bg-light rounded position-absolute info-message">
                                             <div class="p-2">Info messaggio</div>
